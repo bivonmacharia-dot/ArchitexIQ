@@ -362,7 +362,7 @@ async function doRegister() {
 // ═══════════════════════════════════════════════════
 // INIT — Check login on page load
 // ═══════════════════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded',// () => {
   if (isLoggedIn()) {
     showMainApp();
   } else {
