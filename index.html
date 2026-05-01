@@ -12,7 +12,7 @@
 <body>
 
 <!-- STATUS BAR -->
-<div class="status-bar">
+<div class="status-bar" id="status-bar">
   <div class="status-time" id="statusTime">9:41</div>
   <div class="status-icons">
     <span>📶</span><span>🔋</span>
@@ -20,7 +20,7 @@
 </div>
 
 <!-- HEADER -->
-<div class="app-header">
+<div class="app-header" id="appheader">
   <div class="app-logo">Architex<span style="color:var(--gold2);">IQ</span><small>C.L.B.</small></div>
   <div class="header-right">
     <div class="notif-btn" onclick="showToast('🔔 No new notifications')">🔔</div>
@@ -30,10 +30,10 @@
 <!-- SCROLL AREA -->
 <div class="scroll-area" id="scrollArea">
   <div class="page-content" id="pageContent"></div>
-</div>
+</dēiv>
 
 <!-- BOTTOM NAV -->
-<nav class="bottom-nav">
+<nav class="bottom-nav" id="bottomNav">
   <button class="nav-item active" id="nav-calc" onclick="navigate('calc')">
     <div class="nav-icon">🧱</div>
     <div class="nav-label">Calc</div>
@@ -83,7 +83,8 @@
 <div class="toast" id="toast"></div>
 
 <!-- ArchitexIQ App Logic -->
-<script src="app.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
 
 </body>
 </html>
