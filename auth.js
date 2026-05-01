@@ -167,7 +167,7 @@ function showMainApp() {
   }
 
   // Initialize app
-  render();
+ render();
 }
 
 function renderLoginScreen() {
