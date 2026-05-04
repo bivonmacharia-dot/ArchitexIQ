@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ArchitexIQ — Calculate. Learn. Build.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- STATUS BAR -->
+<div class="status-bar" id="statusBar">
+  <div class="status-time" id="statusTime">9:41</div>
+  <div class="status-icons">
+    <span>📶</span><span>🔋</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="app-header" id="appHeader">
+  <div class="app-logo" id="appLogo">
+    Architex<span style="color:var(--gold2);">IQ</span>
+    <small>C.L.B.</small>
+  </div>
+  <div class="header-right">
+    <div class="notif-btn" onclick="showToast('🔔 No new notifications')">🔔</div>
+    <div class="notif-btn" onclick="navigate('settings')" title="Settings">⚙️</div>
+    <div class="notif-btn" onclick="logoutUser()" title="Logout" style="font-size:0.7rem;font-weight:700;color:var(--gold);">OUT</div>
+  </div>
+</div>
+
+<!-- SCROLL AREA -->
+<div class="scroll-area" id="scrollArea">
+  <div class="page-content" id="pageContent"></div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav" id="bottomNav">
+  <button class="nav-item active" id="nav-calc" onclick="navigate('calc')">
+    <div class="nav-icon">🧱</div>
+    <div class="nav-label">Calc</div>
+  </button>
+  <button class="nav-item" id="nav-labour" onclick="navigate('labour')">
+    <div class="nav-icon">👷</div>
+    <div class="nav-label">Labour</div>
+  </button>
+  <button class="nav-item" id="nav-planner" onclick="navigate('planner')">
+    <div class="nav-icon">🗺️</div>
+    <div class="nav-label">Plan</div>
+  </button>
+  <button class="nav-item" id="nav-learn" onclick="navigate('learn')">
+    <div class="nav-icon">📚</div>
+    <div class="nav-label">Learn</div>
+  </button>
+  <button class="nav-item" id="nav-stats" onclick="navigate('stats')">
+    <div class="nav-icon">📊</div>
+    <div class="nav-label">Stats</div>
+  </button>
+</nav>
+
+<!-- AI CHAT FAB -->
+<button class="chat-fab" onclick="openChat()" id="chatFab">🤖</button>
+
+<!-- AI CHAT OVERLAY -->
+<div class="chat-overlay" id="chatOverlay" style="display:none;">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar">🤖</div>
+      <div>
+        <div class="chat-name">ArchitexIQ AI</div>
+        <div class="chat-status">Online · Kenya Construction Expert</div>
+      </div>
+    </div>
+    <button class="chat-close" onclick="closeChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-suggestions" id="chatSuggestions"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chatInput"
+      placeholder="Ask about construction, costs, materials..."
+      rows="1"
+      onkeydown="handleChatKey(event)"
+      oninput="autoResize(this)"></textarea>
+    <button class="chat-send" onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- AUTH OVERLAY (injected by auth.js) -->
+<div id="authOverlay" style="display:none;position:fixed;inset:0;z-index:90;flex-direction:column;"></div>
+
+<!-- ═══ SCRIPTS — ORDER MATTERS! ═══ -->
+<script src="app.js"></script>
+<script src="learn.js"></script>
+<script src="settings.js"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>
